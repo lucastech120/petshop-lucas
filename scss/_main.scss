@@ -108,19 +108,10 @@ h2 {
   padding: 12px 8px;
   text-align: center;
   object-fit: contain;
-  background-color: rgba(120, 148, 160, 0.664);
+
   img {
     @include responsive-img;
   }
-  /*img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    box-sizing: border-box;
-  }*/
 }
 #contenedor-cajas {
   width: 100%;

@@ -250,8 +250,119 @@ h2 {
   margin-bottom: 8px;
 }
 .info-tienda div p {
-  padding: 2px;
+  max-width: 90%;
   font-size: 0.7rem;
+  text-align: center;
+  padding: 4px;
+  margin: 0 auto;
+}
+
+.faq {
+  padding: 20px;
+  background-color: #24afff;
+  color: #000;
+  text-align: center;
+}
+.faq h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+.faq .faq-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+.faq .faq-items details {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+.faq .faq-items details summary {
+  font-weight: bold;
+  font-size: 1rem;
+  outline: none;
+}
+.faq .faq-items details p {
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+.faq .faq-items details:hover {
+  background-color: #f0f0f0;
+}
+
+.contacto {
+  padding: 20px;
+  background-color: #1fa7cc;
+  color: #000;
+  text-align: center;
+}
+.contacto h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.contacto p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.contacto form label {
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.contacto input,
+.contacto textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.contacto button {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.contacto button:hover {
+  background-color: #005fa3;
+}
+.contacto button button:active {
+  transform: scale(2);
+}
+
+h3 {
+  margin-top: 30px;
+  font-size: 1.4rem;
+}
+
+.mapa {
+  margin-top: 16px;
+}
+.mapa iframe {
+  width: 100%;
+  height: 250px;
+  border: 0;
+  border-radius: 8px;
+  max-width: 600px;
 }
 
 .categories-grid {
@@ -366,13 +477,6 @@ h2 {
   height: 100%;
 }
 
-.maps {
-  text-align: center;
-}
-.maps iframe {
-  display: block;
-  margin: 0 auto;
-}
 @media (min-width: 768px) {
   .main {
     display: flex;
@@ -387,6 +491,22 @@ h2 {
     text-align: center;
     padding: 4px;
     margin: 4px;
+  }
+  .contacto {
+    padding: 40px;
+  }
+  .contacto form {
+    gap: 16px;
+  }
+  .contacto form input,
+  .contacto form textarea {
+    font-size: 1.1rem;
+  }
+  .contacto form button {
+    font-size: 1.1rem;
+  }
+  .contacto .mapa iframe {
+    height: 350px;
   }
   .carousel {
     max-height: 204px;

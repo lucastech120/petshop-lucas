@@ -1,7 +1,6 @@
 .main {
   grid-area: main;
   width: 100%;
-  background-color: #24afff;
   min-height: 80vh;
 }
 
@@ -9,12 +8,6 @@
   min-height: 80vh;
   background-color: #24afff;
   min-width: 100%;
-}
-
-.aside-div {
-  background-color: black;
-  height: 88px;
-  text-align: center;
 }
 
 p {
@@ -29,8 +22,7 @@ h2 {
 
 .categories-section {
   text-align: center;
-  padding: 0.5rem 0.5rem;
-  background-color: #e0f2f770;
+  padding: 8px 8px 24px 8px;
 
   &__title {
     font-size: 1.4rem;
@@ -96,7 +88,7 @@ h2 {
   grid-area: main;
   width: 100%;
   text-align: center;
-  background-color: #24afff;
+
   padding: 20px;
   min-height: 80vh;
 }
@@ -108,6 +100,9 @@ h2 {
   padding: 12px 8px;
   text-align: center;
   object-fit: contain;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 
   img {
     @include responsive-img;
@@ -115,7 +110,6 @@ h2 {
 }
 #contenedor-cajas {
   width: 100%;
-  background-color: lightblue;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -136,6 +130,19 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.maps {
+  text-align: center;
+
+  iframe {
+    display: block;
+    margin: 0 auto;
+  }
+  @media (min-width: 768px) {
+  }
+  @media (min-width: 1024px) {
+  }
 }
 
 @media (min-width: 768px) {

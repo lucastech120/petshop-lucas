@@ -196,6 +196,7 @@ body {
   }
 }
 .main {
+  background-color: #24afff;
   grid-area: main;
   width: 100%;
   min-height: 80vh;
@@ -299,7 +300,6 @@ h2 {
 
 .contacto {
   padding: 20px;
-  background-color: #1fa7cc;
   color: #000;
   text-align: center;
 }
@@ -638,6 +638,13 @@ h3 {
   justify-content: center;
 }
 
+.footer-bottom {
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.85rem;
+  color: white;
+}
+
 @media (min-width: 768px) {
   .footer-container {
     flex-direction: row;
@@ -650,6 +657,11 @@ h3 {
     text-align: left;
   }
 }
+.footer-bottom {
+  font-size: 0.75rem;
+  padding: 0.6rem;
+}
+
 @media (min-width: 1024px) {
   .footer-container .footer-section {
     flex: 1 1 20%;

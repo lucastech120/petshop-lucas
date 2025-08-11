@@ -105,6 +105,12 @@
     }
   }
 }
+.footer-bottom {
+  text-align: center;
+  padding: 0.8rem;
+  font-size: 0.85rem;
+  color: white;
+}
 @media (min-width: 768px) {
   .footer-container {
     flex-direction: row;
@@ -117,6 +123,10 @@
       }
     }
   }
+}
+.footer-bottom {
+  font-size: 0.75rem;
+  padding: 0.6rem;
 }
 
 @media (min-width: 1024px) {

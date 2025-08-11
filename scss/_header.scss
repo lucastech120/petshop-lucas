@@ -32,6 +32,34 @@
 .header-div i:hover {
   color: #a0d8ef;
 }
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #0d47a1;
+  border-radius: 20px;
+  padding: 5px 10px;
+  max-width: 100%;
+
+  input {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 5px;
+    outline: none;
+    width: 180px;
+    max-width: 100%;
+
+    &::placeholder {
+      color: #bbdefb;
+    }
+  }
+
+  i {
+    color: white;
+    margin-left: 5px;
+    font-size: 14px;
+  }
+}
 
 .nav-bar {
   grid-area: nav;

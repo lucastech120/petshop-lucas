@@ -55,6 +55,32 @@ body {
   color: #a0d8ef;
 }
 
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #0d47a1;
+  border-radius: 20px;
+  padding: 5px 10px;
+  max-width: 100%;
+}
+.search-box input {
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 5px;
+  outline: none;
+  width: 180px;
+  max-width: 100%;
+}
+.search-box input::placeholder {
+  color: #bbdefb;
+}
+.search-box i {
+  color: white;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
 .nav-bar {
   grid-area: nav;
   min-height: 4vh;

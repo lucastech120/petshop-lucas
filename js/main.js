@@ -100,86 +100,69 @@ function ordenarStock() {
 }
  */
 
-const productos = [
-  {id: 1,nombre: "Bebedero rosa gatos",precio: 8399,imagen: "../img/productos/bebedero-rosa.jpg",},
-  {id: 2,nombre: "Snack pedigree sabor pollo",precio: 1100,imagen: "../img/productos/sobrecito-perro.jpg",},
-  {id: 3,nombre: "Bolsitas higiénicas",precio: 1800,imagen: "../img/productos/bolsitas.jpg",},
-  {id: 4,nombre: "Pasta dental y cepillo",precio: 2400,imagen: "../img/productos/pasta-cepillo.jpg",},
-  {id: 5,nombre: "Piedras higiénicas 10kg",precio: 6700,imagen: "../img/productos/pets-piedras.jpg",},
-  {id: 6,nombre: "Pipeta power perros",precio: 5200,imagen: "../img/productos/power-perros.jpg",},
-  {id: 7,nombre: "Sabrositos gatos 20kg",precio: 13600,imagen: "../img/productos/sabrositos.jpg",},
-  {id: 8,nombre: "Arenero",precio: 5500,imagen: "../img/productos/arenero.jpg",},
-  {id: 9,nombre: "Bebedero alto gatos",precio: 6800,imagen: "../img/productos/bebedero-blanco.jpg",},
-  {id: 10,nombre: "Pipeta power gatos",precio: 5200,imagen: "../img/productos/power-gatos.jpg",},
-  {id: 11,nombre: "Dispenser comida",precio: 8500,imagen: "../img/productos/bebedero.jpg",},
-  {id: 12,nombre: "Huesitos",precio: 2000,imagen: "../img/productos/huesitos.jpg",},
-  {id: 13,nombre: "Palita higiénica",precio: 900,imagen: "../img/productos/pala.jpg",},
-  {id: 14,nombre: "Piedritas absorsol 10kg",precio: 7400,imagen: "../img/productos/absorsol-piedras.jpg",},
-  {id: 15,nombre: "Shampoo gatos",precio: 2500,imagen: "../img/productos/shampoo-gatos.jpg",},
-  {id: 16,nombre: "Shampoo perros",precio: 3000,imagen: "../img/productos/dermosedan-perros.jpg",},
-  {id: 17,nombre: "Whiskas gatos carne",precio: 900,imagen: "../img/productos/whiskas-gato.jpg",},
-  {id: 18,nombre: "Transportadora",precio: 27500,imagen: "../img/productos/gatera.jpg",},
-  {id: 19,nombre: "Mordedor Stich",precio: 5000,imagen: "../img/productos/stich.jpg",},
-  {id: 20,nombre: "Premier gatos adultos 5kg",precio: 15999,imagen: "../img/productos/premier-cats.jpg",},
-  {id: 21,nombre: "Royal gatos dental 5kg",precio: 18999,imagen: "../img/productos/royal-gatos-v.jpg",},
-  {id: 22,nombre: "Royal perros renal 5kg",precio: 19999,imagen: "../img/productos/royal-renal.jpg",},
-  {id: 23,nombre: "Mordillo",precio: 9799,imagen: "../img/productos/mordillo.jpg",},
-  {id: 24,nombre: "Pechera + Correa",precio: 10999,imagen: "../img/productos/pechera-correa.jpg",},
-  {id: 25,nombre: "Casita para perro",precio: 19899,imagen: "../img/productos/casita-marron.jpg",},
-  {id: 26,nombre: "Royal gatos castrados 5kg",precio: 18999,imagen: "../img/productos/royal-castrados-c.jpg",},
-  {id: 27,nombre: "Huesitos de goma para perros",precio: 8999,imagen: "../img/productos/huesito-goma.jpg",},
-  {id: 28,nombre: "Cepillo de vapor para gatos",precio: 11999,imagen: "../img/productos/cepillo-vapor.jpg",},
-  {id: 29,nombre: "Rascador",precio: 14999,imagen: "../img/productos/rascador-rueda.jpg",},
-  {id: 30,nombre: "Arbol para gatos",precio: 27999,imagen: "../img/productos/arbol-gatos.jpg",},
-  {id: 31, nombre: "Huesitos sabor carne", precio: 6999, imagen: "../img/productos/huesitos-sabor.jpg",}, 
-  {id: 32,nombre: "Royal gatos indoor 5kg",precio: 16999,imagen: "../img/productos/roya-indor-c.jpg",},
-  {id: 33,nombre: "Cama para gatos",precio: 14999,imagen: "../img/productos/cama-gatos.jpg",},
-  {id: 34,nombre: "Casita para gatos",precio: 19999,imagen: "../img/productos/casita-gatos.jpg",},
-  {id: 35,nombre: "Royal perros castrados 5kg",precio: 18999,imagen: "../img/productos/royal-castrados-p.jpg",},
-];
+// js/main.js
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+import { actualizarContadorCarrito } from "./utils.js";
 
-function actualizarCarrito() {
-  const contenedorCarrito = document.getElementById("carrito");
-  contenedorCarrito.innerHTML = "";
-  if (carrito.length === 0) {
-    contenedorCarrito.innerHTML = "<p>El carrito está vacío</p>";
-  } else {
-    carrito.forEach((prod, index) => {
-      const item = document.createElement("div");
-      item.innerHTML = ` <img src="${prod.imagen}" alt="${
-        prod.nombre
-      }" style="width:60px; height:auto; margin-right:10px;" />
-      <div class="info-carrito"> 
-      <h4>${prod.nombre}</h4> 
-      <p>$${prod.precio.toLocaleString("es-AR")}</p> 
-      </div> <button class="btn-eliminar" data-index="${index}">❌</button> `;
-      contenedorCarrito.appendChild(item);
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.getElementById("contenedor-cajas");
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  function agregarAlCarrito(producto) {
+    const existente = carrito.find((item) => item.id === producto.id);
+    if (existente) {
+      existente.cantidad += 1;
+    } else {
+      carrito.push({ ...producto, cantidad: 1 });
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    console.log("Carrito actualizado:", carrito); 
+    mostrarNotificacion("Producto agregado ✅");
   }
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  function mostrarNotificacion(mensaje) {
+  const notificacion = document.getElementById("notificacion");
+  notificacion.textContent = mensaje;
+  notificacion.classList.add("mostrar");
+
+  setTimeout(() => {
+    notificacion.classList.remove("mostrar");
+  }, 4000);
 }
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-agregar")) {
-    const id = parseInt(e.target.dataset.id);
-    const producto = productos.find((p) => p.id === id);
-    const existe = carrito.find((p) => p.id === id);
-    if (!existe) carrito.push(producto);
-    actualizarCarrito();
-  }
+  fetch("../productos.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el archivo productos.json");
+      }
+      return response.json();
+    })
+    .then((productos) => {
+      productos.forEach((prod) => {
+        const div = document.createElement("div");
+        div.classList.add("producto");
 
-  if (e.target.classList.contains("btn-eliminar")) {
-    const index = parseInt(e.target.dataset.index);
-    carrito.splice(index, 1);
-    actualizarCarrito();
-  }
+        div.innerHTML = `
+          <img src="${prod.imagen}" alt="${prod.nombre}">
+          <h3>${prod.nombre}</h3>
+          <p class="precio">$${prod.precio}</p>
+          <button class="btn-agregar" data-id="${prod.id}">Agregar al carrito</button>
+        `;
+
+        contenedor.appendChild(div);
+      });
+
+      const botonesAgregar = document.querySelectorAll(".btn-agregar");
+      botonesAgregar.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+          const id = e.target.dataset.id;
+          const producto = productos.find((p) => p.id === id);
+          agregarAlCarrito(producto);
+        });
+      });
+    })
+
+    .catch((error) => console.error(error));
+
+  actualizarContadorCarrito();
 });
-
-document.getElementById("vaciar-carrito").addEventListener("click", () => {
-  carrito = [];
-  actualizarCarrito();
-});
-
-actualizarCarrito();

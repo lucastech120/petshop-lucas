@@ -18,23 +18,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-   <script defer src="../js/main.js"></script>
+   <script type="module" defer src="../js/main.js"></script>
+   <script type="module" defer src="js/carrito.js"></script>
     <!-- Trabajo de Lucas Ezequiel Rugnone -->
   </head>
   <body>
     <section class="layout">
       <header class="header">
-        <div class="header-div">
-          <img src="img/petshop-logo.png" alt="Logo Pet Shop" class="logo" />
-          <div class="search-box">
-            <input type="text" placeholder="Buscar productos...">
-            <i class="fas fa-search"></i>
-          </div>
-          <div><i class="fab fa-whatsapp"></i></div>
-          <div><i class="fas fa-shopping-basket"></i></div>
-        </div>
-      </header>
-    </section>
+  <div class="header-div">
+    <img src="img/petshop-logo.png" alt="Logo Pet Shop" class="logo" />
+    <div class="search-box">
+      <input type="text" placeholder="Buscar productos...">
+      <i class="fas fa-search"></i>
+    </div>
+    <div><i class="fab fa-whatsapp"></i></div>
+  </div>
+</header>
     <nav class="nav-bar">
       <ul class="nav-menu">
         <li class="li-list">
@@ -100,6 +99,11 @@
         <li class="li-list">
           <a href="page/contacto.html" class="nav-link">Contacto</a>
         </li>
+         <li class="li-list carrito-item">
+              <a href="page/carrito.html" class="icono-carrito"> 🛒 
+              <span id="contador-carrito">0</span>
+              </a>
+         </li>
       </ul>
     </nav>
     <main class="main">
@@ -132,7 +136,7 @@
   </button>
   </div>
         </section>
-<section class="categories-section">
+          <section class="categories-section">
             <h2 class="categories-section__title">😺Nuestras categorias🐶</h2>
             <div class="categories-grid">
                 <a href="page/productos.html" class="category-item category-item--offers">
@@ -157,7 +161,9 @@
       <section class="container-productos"> 
         <section id="contenedor-cajas">
           <!-- Los productos se cargarán aquí dinámicamente -->
-        </section>
+          </section>
+          </section>
+     
     </main>
     <footer class="footer">
       <div class="footer-container">
@@ -214,6 +220,8 @@
           &copy; Derechos reservados - Lucas Rugnone
         </div>
     </footer>
+  </section>
+    <div id="notificacion" class="notificacion">Producto agregado ✅</div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"

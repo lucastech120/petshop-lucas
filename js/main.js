@@ -100,57 +100,69 @@ function ordenarStock() {
 }
  */
 
-let productos = [];
-fetch("./js/productos.json")
-    .then(response => response.json())
-    .then(data => {
-        productos = data;
-        cargarProductos(productos);
-    })
+// js/main.js
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+import { actualizarContadorCarrito } from "./utils.js";
 
-function actualizarCarrito() {
-  const contenedorCarrito = document.getElementById("carrito");
-  contenedorCarrito.innerHTML = "";
-  if (carrito.length === 0) {
-    contenedorCarrito.innerHTML = "<p>El carrito está vacío</p>";
-  } else {
-    carrito.forEach((prod, index) => {
-      const item = document.createElement("div");
-      item.innerHTML = ` <img src="${prod.imagen}" alt="${
-        prod.nombre
-      }" style="width:60px; height:auto; margin-right:10px;" />
-      <div class="info-carrito"> 
-      <h4>${prod.nombre}</h4> 
-      <p>$${prod.precio.toLocaleString("es-AR")}</p> 
-      
-      </div> <button class="btn-eliminar" data-index="${index}">❌</button> `;
-      contenedorCarrito.appendChild(item);
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const contenedor = document.getElementById("contenedor-cajas");
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  function agregarAlCarrito(producto) {
+    const existente = carrito.find((item) => item.id === producto.id);
+    if (existente) {
+      existente.cantidad += 1;
+    } else {
+      carrito.push({ ...producto, cantidad: 1 });
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    console.log("Carrito actualizado:", carrito); 
+    mostrarNotificacion("Producto agregado ✅");
   }
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  function mostrarNotificacion(mensaje) {
+  const notificacion = document.getElementById("notificacion");
+  notificacion.textContent = mensaje;
+  notificacion.classList.add("mostrar");
+
+  setTimeout(() => {
+    notificacion.classList.remove("mostrar");
+  }, 4000);
 }
 
-document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("btn-agregar")) {
-    const id = parseInt(e.target.dataset.id);
-    const producto = productos.find((p) => p.id === id);
-    const existe = carrito.find((p) => p.id === id);
-    if (!existe) carrito.push(producto);
-    actualizarCarrito();
-  }
+  fetch("../productos.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("No se pudo cargar el archivo productos.json");
+      }
+      return response.json();
+    })
+    .then((productos) => {
+      productos.forEach((prod) => {
+        const div = document.createElement("div");
+        div.classList.add("producto");
 
-  if (e.target.classList.contains("btn-eliminar")) {
-    const index = parseInt(e.target.dataset.index);
-    carrito.splice(index, 1);
-    actualizarCarrito();
-  }
+        div.innerHTML = `
+          <img src="${prod.imagen}" alt="${prod.nombre}">
+          <h3>${prod.nombre}</h3>
+          <p class="precio">$${prod.precio}</p>
+          <button class="btn-agregar" data-id="${prod.id}">Agregar al carrito</button>
+        `;
+
+        contenedor.appendChild(div);
+      });
+
+      const botonesAgregar = document.querySelectorAll(".btn-agregar");
+      botonesAgregar.forEach((boton) => {
+        boton.addEventListener("click", (e) => {
+          const id = e.target.dataset.id;
+          const producto = productos.find((p) => p.id === id);
+          agregarAlCarrito(producto);
+        });
+      });
+    })
+
+    .catch((error) => console.error(error));
+
+  actualizarContadorCarrito();
 });
-
-document.getElementById("vaciar-carrito").addEventListener("click", () => {
-  carrito = [];
-  actualizarCarrito();
-});
-
-actualizarCarrito();

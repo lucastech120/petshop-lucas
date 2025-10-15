@@ -1,11 +1,11 @@
-const productos = [
+[
     {"id": "gatos-01",
       "nombre": "Bebedero rosa gatos",
       "imagen": "../img/productos/bebedero-rosa.jpg",
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 8399,
+      "precio": 8399
     },
     {"id": "gatos-02",
       "nombre": "Piedras higiénicas 10kg",
@@ -13,7 +13,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 6700,
+      "precio": 6700
     },
     {"id": "gatos-03",
       "nombre": "Sabrositos gatos 20kg",
@@ -21,7 +21,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 13600,
+      "precio": 13600
     },
     {"id": "gatos-04",
       "nombre": "Arenero",
@@ -29,7 +29,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 5500,
+      "precio": 5500
     },
     {"id": "gatos-05",
       "nombre": "Bebedero alto gatos",
@@ -37,7 +37,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 6800,
+      "precio": 6800
     },
     {"id": "gatos-06",
       "nombre": "Pipeta power gatos",
@@ -45,7 +45,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 5200,
+      "precio": 5200
     },
     {"id": "gatos-07",
       "nombre": "Dispenser comida",
@@ -53,7 +53,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 8500,
+      "precio": 8500
     },
     {"id": "gatos-08",
       "nombre": "Palita higiénica",
@@ -61,7 +61,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 900,
+      "precio": 900
     },
     {"id": "gatos-09",
       "nombre": "Piedritas absorsol 10kg",
@@ -69,7 +69,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 7400,
+      "precio": 7400
     },
     {"id": "gatos-10",
       "nombre": "Shampoo gatos",
@@ -77,7 +77,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 2500,
+      "precio": 2500
     },
     {"id": "gatos-11",
       "nombre": "Whiskas gatos carne",
@@ -85,7 +85,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 900,
+      "precio": 900
     },
     {"id": "gatos-12",
       "nombre": "Transportadora",
@@ -93,7 +93,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 27500,
+      "precio": 27500
     },
     {"id": "gatos-13",
       "nombre": "Premier gatos adultos 5kg",
@@ -101,7 +101,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 15999,
+      "precio": 15999
     },
     {"id": "gatos-14",
       "nombre": "Royal gatos dental 5kg",
@@ -109,7 +109,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 18999,
+      "precio": 18999
     },
     {"id": "gatos-15",
       "nombre": "Royal gatos castrados 5kg",
@@ -117,7 +117,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 18999,
+      "precio": 18999
     },
     {"id": "gatos-16",
       "nombre": "Cepillo de vapor para gatos",
@@ -125,7 +125,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 11999,
+      "precio": 11999
     },
     {"id": "gatos-17",
       "nombre": "Rascador",
@@ -133,7 +133,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 14999,
+      "precio": 14999
     },
     {"id": "gatos-18",
       "nombre": "Arbol para gatos",
@@ -141,7 +141,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 27999,
+      "precio": 27999
     },
     {"id": "gatos-19",
       "nombre": "Royal gatos indoor 5kg",
@@ -149,7 +149,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 16999,
+      "precio": 16999
     },
     {"id": "gatos-20",
       "nombre": "Cama para gatos",
@@ -157,7 +157,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 14999,
+      "precio": 14999
     },
     {"id": "gatos-21",
       "nombre": "Casita para gatos",
@@ -165,7 +165,7 @@ const productos = [
       "categoria": {
           "nombre": "Gatos",
           "id": "gatos"},
-      "precio": 19999,
+      "precio": 19999
     },
 
 
@@ -175,7 +175,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 1100,
+      "precio": 1100
     },
     {"id": "perros-02",
       "nombre": "Bolsitas higiénicas",
@@ -183,7 +183,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 1800,
+      "precio": 1800
     },
     {"id": "perros-03",
       "nombre": "Pasta dental y cepillo",
@@ -191,7 +191,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 2400,
+      "precio": 2400
     },
     {"id": "perros-04",
       "nombre": "Pipeta power perros",
@@ -199,7 +199,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 5200,
+      "precio": 5200
     },
     {"id": "perros-05",
       "nombre": "Huesitos",
@@ -207,7 +207,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 2000,
+      "precio": 2000
     },
     {"id": "perros-06",
       "nombre": "Shampoo perros",
@@ -215,7 +215,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 3000,
+      "precio": 3000
     },
     {"id": "perros-07",
       "nombre": "Mordedor Stich",
@@ -223,7 +223,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 5000,
+      "precio": 5000
     },
     {"id": "perros-08",
       "nombre": "Royal perros renal 5kg",
@@ -231,7 +231,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 19999,
+      "precio": 19999
     },
     {"id": "perros-09",
       "nombre": "Mordillo",
@@ -239,7 +239,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 9799,
+      "precio": 9799
     },
     {"id": "perros-10",
       "nombre": "Pechera + Correa",
@@ -247,7 +247,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 10999,
+      "precio": 10999
     },
     {"id": "perros-11",
       "nombre": "Casita para perro",
@@ -255,7 +255,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 19899,
+      "precio": 19899
     },
     {"id": "perros-12",
       "nombre": "Huesitos de goma para perros",
@@ -263,7 +263,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 8999,
+      "precio": 8999
     },
     {"id": "perros-13",
       "nombre": "Huesitos sabor carne",
@@ -271,7 +271,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 6999,
+      "precio": 6999
     },
     {"id": "perros-14",
       "nombre": "Royal perros castrados 5kg",
@@ -279,7 +279,7 @@ const productos = [
       "categoria": {
           "nombre": "Perros",
           "id": "perros"},
-      "precio": 18999,
-    },
+      "precio": 18999
+    }
 
-];
+]

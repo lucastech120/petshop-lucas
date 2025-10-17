@@ -17,13 +17,12 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <script type="module" src="../js/carrito.js"></script>
+    <script type="module" src="../js/utils.js"></script>
+    <script type="module" src="../js/main.js"></script>
   </head>
   <body>
     <section class="layout">
@@ -35,7 +34,6 @@
             <i class="fas fa-search"></i>
           </div>
           <div><i class="fab fa-whatsapp"></i></div>
-          <div><i class="fas fa-shopping-basket"></i></div>
         </div>
       </header>
     </section>
@@ -51,9 +49,7 @@
               <a href="productos.html" class="nav-link">Perros</a>
               <ul class="sub-ul-list">
                 <li class="li-list">
-                  <a href="productos.html" class="nav-link"
-                    >Alimentos balanceados</a
-                  >
+                  <a href="productos.html" class="nav-link">Alimentos balanceados</a>
                 </li>
                 <li class="li-list">
                   <a href="productos.html" class="nav-link">Snacks</a>
@@ -76,9 +72,7 @@
               <a href="productos.html" class="nav-link">Gatos</a>
               <ul class="sub-ul-list">
                 <li class="li-list">
-                  <a href="productos.html" class="nav-link"
-                    >Alimentos balanceados</a
-                  >
+                  <a href="productos.html" class="nav-link">Alimentos balanceados</a>
                 </li>
                 <li class="li-list">
                   <a href="productos.html" class="nav-link">Snacks</a>
@@ -108,40 +102,25 @@
         <li class="li-list">
           <a href="contacto.html" class="nav-link">Contacto</a>
         </li>
+        <li class="li-list carrito-item">
+          <a href="carrito.html" class="icono-carrito">
+            🛒
+            <span id="contador-carrito">0</span>
+          </a>
+        </li>
       </ul>
     </nav>
     <main class="main">
       <section class="contacto">
         <h2>Formulario de contacto</h2>
-        <p>
-          ¿Tenés alguna duda, sugerencia o querés hacernos un pedido
-          personalizado? ¡Escribinos!
-        </p>
+        <p>¿Tenés alguna duda, sugerencia o querés hacernos un pedido personalizado? ¡Escribinos!</p>
         <form>
           <label for="nombre">Nombre:</label>
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Tu nombre completo"
-            required
-          />
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required />
           <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="tucorreo@ejemplo.com"
-            required
-          />
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required />
           <label for="mensaje">Mensaje:</label>
-          <textarea
-            id="mensaje"
-            name="mensaje"
-            rows="5"
-            placeholder="Escribí tu mensaje aquí..."
-            required
-          ></textarea>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje aquí..." required></textarea>
           <button type="submit">Enviar</button>
         </form>
         <h3>Nuestras sucursales</h3>
@@ -151,8 +130,7 @@
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
+          ></iframe>
         </div>
       </section>
     </main>
@@ -193,12 +171,8 @@
         <div class="footer-section">
           <h4>REDES SOCIALES</h4>
           <div class="social-icons">
-            <a href="https://www.instagram.com/"
-              ><i class="fab fa-instagram"></i
-            ></a>
-            <a href="https://www.facebook.com/"
-              ><i class="fab fa-facebook"></i
-            ></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
           </div>
           <h4>¡RECIBÍ NUESTRAS NOVEDADES!</h4>
           <form class="newsletter">
@@ -207,9 +181,7 @@
           </form>
         </div>
       </div>
-      <div class="footer-bottom">
-        &copy; Derechos reservados - Lucas Rugnone
-      </div>
+      <div class="footer-bottom">&copy; Derechos reservados - Lucas Rugnone</div>
     </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

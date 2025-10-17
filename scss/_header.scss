@@ -111,7 +111,7 @@
   justify-content: center;
   background-color: #09a1c7;
 
-
+  /* 🔥 Hace que el nav quede fijo al hacer scroll */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -127,6 +127,7 @@
   margin: 0;
 }
 
+/* Estilo para el carrito dentro del nav */
 .icono-carrito {
   font-size: 1.1rem;
   text-decoration: none;

@@ -116,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       carrito.push({ ...producto, cantidad: 1 });
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarContadorCarrito();
     console.log("Carrito actualizado:", carrito); 
     mostrarNotificacion("Producto agregado ✅");
   }

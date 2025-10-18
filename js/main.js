@@ -101,6 +101,9 @@ function ordenarStock() {
  */
 
 // js/main.js
+import './carrito.js';
+import './utils.js';
+import './busqueda.js';
 
 import { actualizarContadorCarrito } from "./utils.js";
 

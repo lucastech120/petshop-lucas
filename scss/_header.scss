@@ -2,7 +2,7 @@
 
 .header {
   grid-area: header;
-  background-color: #0278bd;
+  background-color: $primary-color;
   text-align: center;
   min-height: 10vh;
   padding: 14px;
@@ -17,7 +17,7 @@
   gap: 20px;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #1565c0;
+  background-color: $secondary-color;
   padding: 10px;
 }
 
@@ -35,11 +35,10 @@
 .search-box {
   display: flex;
   align-items: center;
-  background-color: #0d47a1;
+  background-color: #7a4a88;
   border-radius: 20px;
   padding: 5px 10px;
   max-width: 100%;
-
   input {
     border: none;
     background: transparent;
@@ -48,12 +47,10 @@
     outline: none;
     width: 180px;
     max-width: 100%;
-
     &::placeholder {
       color: #bbdefb;
     }
   }
-
   i {
     color: white;
     margin-left: 5px;
@@ -61,57 +58,13 @@
   }
 }
 
-// .nav-bar {
-//   grid-area: nav;
-//   min-height: 4vh;
-//   display: flex;
-//   position: sticky;
-//   justify-content: center;
-//   z-index: 1000;
-// }
 
-// .nav-menu {
-//   display: flex;
-//   width: 100%;
-//   justify-content: space-evenly;
-//   list-style: none;
-//   align-items: center;
-//   padding: 0px;
-//   margin: 0px;
-//   background-color: rgba(255, 255, 255, 0);
-// }
-// .icono-carrito {
-//   font-size: 1.1rem;
-//   text-decoration: none;
-//   color: #333;
-//   font-weight: bold;
-//   display: flex;
-//   align-items: center;
-//   gap: 4px;
-//   span {
-//     background-color: #ff5555;
-//     color: white;
-//     border-radius: 50%;
-//     padding: 2px 6px;
-//     font-size: 0.8rem;
-//     font-weight: bold;
-//   }
-// }
-// .icono-carrito:hover {
-//   color: white;
-// }
-
-// .carrito-item {
-//   background-color: transparent;
-// }
 .nav-bar {
   grid-area: nav;
   min-height: 4vh;
   display: flex;
   justify-content: center;
-  background-color: #09a1c7;
-
-  /* 🔥 Hace que el nav quede fijo al hacer scroll */
+  background-color: $secondary-color;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -127,7 +80,6 @@
   margin: 0;
 }
 
-/* Estilo para el carrito dentro del nav */
 .icono-carrito {
   font-size: 1.1rem;
   text-decoration: none;
@@ -136,10 +88,11 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  background-color: $secondary-color;
 }
 
 .icono-carrito span {
-  background-color: #ff5555;
+  background-color: #be31ac;
   color: white;
   border-radius: 50%;
   padding: 2px 6px;
@@ -169,6 +122,7 @@
   font-size: 12px;
   text-decoration: none;
   color: #333;
+  background-color: $secondary-color;
 }
 
 .ul-list {

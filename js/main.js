@@ -119,29 +119,63 @@ document.addEventListener("DOMContentLoaded", () => {
       carrito.push({ ...producto, cantidad: 1 });
     }
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    actualizarContadorCarrito();
-    console.log("Carrito actualizado:", carrito); 
+    actualizarContadorCarrito?.(); 
+    console.log("Carrito actualizado:", carrito);
     mostrarNotificacion("Producto agregado ✅");
   }
 
   function mostrarNotificacion(mensaje) {
-  const notificacion = document.getElementById("notificacion");
-  notificacion.textContent = mensaje;
-  notificacion.classList.add("mostrar");
+    const contenedorNotifs = document.getElementById("notificaciones-container");
+    if (!contenedorNotifs) {
+      console.warn("⚠️ No existe #notificaciones-container en este HTML");
+      return;
+    }
 
-  setTimeout(() => {
-    notificacion.classList.remove("mostrar");
-  }, 4000);
-}
+    const toast = document.createElement("div");
+    toast.className = "toast";
+    toast.innerHTML = `
+      <span>${mensaje}</span>
+      <button aria-label="Cerrar">×</button>
+    `;
+
+    contenedorNotifs.appendChild(toast);
+
+    requestAnimationFrame(() => {
+      toast.classList.add("mostrar");
+    });
+
+    const btn = toast.querySelector("button");
+    btn.addEventListener("click", () => cerrarToast(toast));
+
+    const AUTO_CLOSE_MS = 4000;
+    const timer = setTimeout(() => cerrarToast(toast), AUTO_CLOSE_MS);
+
+    function cerrarToast(el) {
+      if (!el) return;
+      el.classList.remove("mostrar");
+      setTimeout(() => {
+        clearTimeout(timer);
+        el.remove();
+      }, 400);
+    }
+  }
+  
+  window.mostrarNotificacion = mostrarNotificacion;
+
+
+  window.agregarAlCarrito = agregarAlCarrito;
 
   fetch("../productos.json")
     .then((response) => {
-      if (!response.ok) {
-        throw new Error("No se pudo cargar el archivo productos.json");
-      }
+      if (!response.ok) throw new Error("No se pudo cargar el archivo productos.json");
       return response.json();
     })
     .then((productos) => {
+      if (!contenedor) {
+        console.error("❌ No se encontró el contenedor de productos en el DOM");
+        return;
+      }
+
       productos.forEach((prod) => {
         const div = document.createElement("div");
         div.classList.add("producto");
@@ -160,13 +194,12 @@ document.addEventListener("DOMContentLoaded", () => {
       botonesAgregar.forEach((boton) => {
         boton.addEventListener("click", (e) => {
           const id = e.target.dataset.id;
-          const producto = productos.find((p) => p.id === id);
+          const producto = productos.find((p) => p.id == id);
           agregarAlCarrito(producto);
         });
       });
     })
-
     .catch((error) => console.error(error));
 
-  actualizarContadorCarrito();
+  actualizarContadorCarrito?.();
 });

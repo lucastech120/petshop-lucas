@@ -5,6 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalHTML = document.getElementById("total");
   const btnVaciar = document.getElementById("vaciar-carrito");
 
+  if (!contenedorCarrito || !totalHTML) {
+    console.warn("carrito.js: No se encontró el contenedor del carrito en esta página.");
+    return;
+  }
+
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   function mostrarCarrito() {
@@ -24,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       div.innerHTML = `
         <img src="../${prod.imagen}" alt="${prod.nombre}">
         <div class="info">
-           <h3>${prod.nombre}</h3>
+          <h3>${prod.nombre}</h3>
           <p>Precio: $${prod.precio}</p>
           <div class="cantidad-control">
             <button class="btn-restar" data-id="${prod.id}">−</button>
@@ -61,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
   function agregarEventosCantidad() {
     const botonesSumar = document.querySelectorAll(".btn-sumar");
     const botonesRestar = document.querySelectorAll(".btn-restar");
@@ -92,11 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  btnVaciar.addEventListener("click", () => {
-    carrito = [];
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarCarrito();
-  });
+  if (btnVaciar) {
+    btnVaciar.addEventListener("click", () => {
+      carrito = [];
+      localStorage.setItem("carrito", JSON.stringify(carrito));
+      mostrarCarrito();
+    });
+  }
 
   mostrarCarrito();
 });

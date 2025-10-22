@@ -1,0 +1,117 @@
+.detalle-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.detalle-imagenes {
+  flex: 1;
+  min-width: 300px;
+}
+
+.imagen-principal {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.miniaturas {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.miniaturas img {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  cursor: pointer;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.miniaturas img:hover {
+  transform: scale(1.1);
+}
+
+.detalle-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.detalle-info h2 {
+  margin-bottom: 10px;
+}
+
+.precio {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.talles {
+  margin: 1rem 0;
+}
+
+.opciones-talle {
+  display: flex;
+  gap: 8px;
+}
+
+.talle {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.talle:hover,
+.talle.activo {
+  background: #000;
+  color: #fff;
+}
+
+.cantidad input {
+  width: 70px;
+  text-align: center;
+}
+
+.btn-agregar-detalle {
+  background: #3b8d3b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-agregar-detalle:hover {
+  background: #2e6e2e;
+}
+
+.info-extra {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.volver {
+  text-decoration: none;
+  color: #444;
+  margin: 1rem;
+  display: inline-block;
+}
+
+.volver:hover {
+  text-decoration: underline;
+}

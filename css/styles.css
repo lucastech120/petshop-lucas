@@ -4,11 +4,6 @@
   box-sizing: border-box;
 }
 
-.layout {
-  display: grid;
-  grid-template-areas: "header" "nav" "main" "footer";
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -777,7 +772,7 @@ h3 {
 .info-extra {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #ddd8d8;
 }
 
 .volver {
@@ -789,6 +784,14 @@ h3 {
 
 .volver:hover {
   text-decoration: underline;
+}
+
+.link-detalle {
+  color: #000;
+  text-decoration: none;
+}
+.link-detalle :hover {
+  color: #2e6e2e;
 }
 
 .footer {
@@ -955,12 +958,3 @@ h3 {
 
 
 /*# sourceMappingURL=styles.css.map */
-
-
-.detalles-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  padding: 4px;
-}

@@ -102,7 +102,7 @@
 .info-extra {
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: #555;
+  color: #ddd8d8;
 }
 
 .volver {
@@ -114,4 +114,13 @@
 
 .volver:hover {
   text-decoration: underline;
+}
+
+
+.link-detalle {
+  color: #000;
+  text-decoration: none;
+  & :hover {
+    color: #2e6e2e;
+  }
 }

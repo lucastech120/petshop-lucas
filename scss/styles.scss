@@ -4,14 +4,6 @@
   box-sizing: border-box;
 }
 
-.layout {
-  display: grid;
-  grid-template-areas:
-    "header"
-    "nav"
-    "main"
-    "footer";
-}
 body {
   font-family: Arial, sans-serif;
   margin: 0;

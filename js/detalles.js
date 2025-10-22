@@ -84,14 +84,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="info-extra">
             <p><strong>Compra protegida:</strong> tus datos cuidados durante toda la compra.</p>
-            <p><strong>Cambios:</strong> si no te gusta, podés solicitar cambio.</p>
+            <p><strong>Cambios:</strong> Si hay algún problema con tu pedido, podés solicitar cambio.</p>
+            <p><strong>Ver términos y cóndiciones</strong></p>
           </div>
         </div>
       </div>
     `;
 
     //Evento agregar al carrito
-    
+
     document.getElementById("agregar-detalle").addEventListener("click", () => {
       const cantidad = parseInt(document.getElementById("cantidad").value) || 1;
       for (let i = 0; i < cantidad; i++) {

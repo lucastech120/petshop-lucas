@@ -1,5 +1,30 @@
 import { actualizarContadorCarrito } from "./utils.js";
 
+// Función fuera del DOMContentLoaded para separar las lógicas.
+import { mostrarNotificacion } from './ui.js';
+
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+export function agregarAlCarrito(producto) {
+  if (!producto) return;
+
+  const existe = carrito.find((item) => item.id === producto.id);
+  if (existe) {
+    existe.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  console.log("Carrito actualizado:", carrito);
+  console.log("Producto agregado ✅");
+  mostrarNotificacion(`✅ ${producto.nombre} agregado al carrito`);
+}
+
+
+//  Todo el render del carrito permanece en el evento DOMContentLoaded:
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const contenedorCarrito = document.getElementById("carrito-items");
   const totalHTML = document.getElementById("total");
@@ -9,8 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("carrito.js: No se encontró el contenedor del carrito en esta página.");
     return;
   }
-
-  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
   function mostrarCarrito() {
     contenedorCarrito.innerHTML = "";
@@ -56,8 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function agregarEventosEliminar() {
-    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
-    botonesEliminar.forEach((boton) => {
+    document.querySelectorAll(".btn-eliminar").forEach((boton) => {
       boton.addEventListener("click", (e) => {
         const id = e.target.dataset.id;
         carrito = carrito.filter((prod) => prod.id !== id);
@@ -68,10 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function agregarEventosCantidad() {
-    const botonesSumar = document.querySelectorAll(".btn-sumar");
-    const botonesRestar = document.querySelectorAll(".btn-restar");
-
-    botonesSumar.forEach((boton) => {
+    document.querySelectorAll(".btn-sumar").forEach((boton) => {
       boton.addEventListener("click", (e) => {
         const id = e.target.dataset.id;
         const producto = carrito.find((p) => p.id === id);
@@ -83,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    botonesRestar.forEach((boton) => {
+    document.querySelectorAll(".btn-restar").forEach((boton) => {
       boton.addEventListener("click", (e) => {
         const id = e.target.dataset.id;
         const producto = carrito.find((p) => p.id === id);

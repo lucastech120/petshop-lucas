@@ -1,5 +1,6 @@
 
 import { agregarAlCarrito } from './carrito.js';
+import { actualizarContadorCarrito } from './utils.js';
 
 const contenedor = document.getElementById("contenedor-cajas");
 
@@ -14,13 +15,15 @@ if (contenedor) {
         const div = document.createElement("div");
         div.classList.add("producto");
 
-        div.innerHTML = `
-        
-          <img src="${prod.imagen}" alt="${prod.nombre}">
-          <h3>${prod.nombre}</h3>
-          <p class="precio">$${prod.precio}</p>
-          <button class="btn-agregar" data-id="${prod.id}">Agregar al carrito</button>
-        `;
+      div.innerHTML = `
+        <a href="detalles.html?id=${prod.id}" class="link-detalle">
+        <img src="${prod.imagen}" alt="${prod.nombre}">
+        <h3>${prod.nombre}</h3>
+        </a>
+        <p class="precio">$${prod.precio}</p>
+        <button class="btn-agregar" data-id="${prod.id}">Agregar al carrito</button>
+`;
+
 
         contenedor.appendChild(div);
       });
@@ -34,6 +37,7 @@ if (contenedor) {
             .then((productos) => {
               const producto = productos.find((p) => p.id == id);
               agregarAlCarrito(producto);
+              actualizarContadorCarrito();
             });
         });
       });

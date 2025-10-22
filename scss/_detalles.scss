@@ -55,16 +55,16 @@
   margin-bottom: 10px;
 }
 
-.talles {
+.caracteristicas {
   margin: 1rem 0;
 }
 
-.opciones-talle {
+.opciones-caracter {
   display: flex;
   gap: 8px;
 }
 
-.talle {
+.caracter {
   background: #eee;
   border: 1px solid #ccc;
   padding: 6px 10px;
@@ -73,8 +73,8 @@
   transition: all 0.2s ease;
 }
 
-.talle:hover,
-.talle.activo {
+.caracter:hover,
+.caracter.activo {
   background: #000;
   color: #fff;
 }

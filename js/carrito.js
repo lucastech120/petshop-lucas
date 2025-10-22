@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       div.classList.add("producto-carrito");
 
       div.innerHTML = `
-        <img src="../${prod.imagen}" alt="${prod.nombre}">
+        <img src="${prod.imagen}" alt="${prod.nombre}">
         <div class="info">
           <h3>${prod.nombre}</h3>
           <p>Precio: $${prod.precio}</p>

@@ -730,16 +730,16 @@ h3 {
   margin-bottom: 10px;
 }
 
-.talles {
+.caracteristicas {
   margin: 1rem 0;
 }
 
-.opciones-talle {
+.opciones-caracter {
   display: flex;
   gap: 8px;
 }
 
-.talle {
+.caracter {
   background: #eee;
   border: 1px solid #ccc;
   padding: 6px 10px;
@@ -748,8 +748,8 @@ h3 {
   transition: all 0.2s ease;
 }
 
-.talle:hover,
-.talle.activo {
+.caracter:hover,
+.caracter.activo {
   background: #000;
   color: #fff;
 }
@@ -955,3 +955,12 @@ h3 {
 
 
 /*# sourceMappingURL=styles.css.map */
+
+
+.detalles-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 4px;
+}

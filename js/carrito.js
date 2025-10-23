@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     contenedorCarrito.innerHTML = "";
 
     if (carrito.length === 0) {
-      contenedorCarrito.innerHTML = "<p>Tu carrito está vacío 🛒</p>";
+      contenedorCarrito.innerHTML = "<p>☹ Tu carrito está vacío ☹</p>";
       totalHTML.textContent = "";
       actualizarContadorCarrito();
       return;
@@ -117,13 +117,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Confirmación si el usuario desea vaciar el carrito o no
+  const confirmacion = document.getElementById("confirmacion");
+  const btnConfirmar = document.getElementById("confirmacion-boton1");
+  const btnCancelar = document.getElementById("confirmacion-boton2");
+
   if (btnVaciar) {
     btnVaciar.addEventListener("click", () => {
-      carrito = [];
-      localStorage.setItem("carrito", JSON.stringify(carrito));
-      mostrarCarrito();
+      confirmacion.style.display = "flex"; 
     });
   }
+
+  btnCancelar.addEventListener("click", () => {
+    confirmacion.style.display = "none"; 
+  });
+
+  btnConfirmar.addEventListener("click", () => {
+    carrito = [];
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito();
+    confirmacion.style.display = "none"; 
+  });
+
 
   mostrarCarrito();
 });

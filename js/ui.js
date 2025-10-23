@@ -1,4 +1,6 @@
+// Funciones exclusivamente visuales
 
+// Función del recuadro de notificación al agregar al carrito
 
 export function mostrarNotificacion(mensaje) {
   const contenedorNotifs = document.getElementById("notificaciones-container");

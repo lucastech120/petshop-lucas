@@ -1,7 +1,9 @@
 import { actualizarContadorCarrito } from "./utils.js";
-
-// Función fuera del DOMContentLoaded para separar las lógicas.
 import { mostrarNotificacion } from './ui.js';
+
+// Función fuera del DOMContentLoaded para separar las lógicas 
+
+// Buscamos el item, si el item existe devolvemos true
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -23,6 +25,9 @@ export function agregarAlCarrito(producto) {
 
 
 //  Todo el render del carrito permanece en el evento DOMContentLoaded:
+
+// Crea un contenedor por cada producto del carrito, y les agrega funciones de cantidad y eliminar individualmente, 
+// al final, función para vaciarlo entero con cartel de confirmación
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -118,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Confirmación si el usuario desea vaciar el carrito o no
+
   const confirmacion = document.getElementById("confirmacion");
   const btnConfirmar = document.getElementById("confirmacion-boton1");
   const btnCancelar = document.getElementById("confirmacion-boton2");

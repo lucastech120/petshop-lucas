@@ -24,9 +24,9 @@ export function agregarAlCarrito(producto) {
 }
 
 
-//  Todo el render del carrito permanece en el evento DOMContentLoaded:
+//  Todo el render del  carrito permanece en el evento DOMContentLoaded:
 
-// Crea un contenedor por cada producto del carrito, y les agrega funciones de cantidad y eliminar individualmente, 
+// Crea un contenedor por cada producto del carrito, y les agrega funciones de cantidad - / + y eliminar individualmente, 
 // al final, función para vaciarlo entero con cartel de confirmación
 
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnVaciar = document.getElementById("vaciar-carrito");
 
   if (!contenedorCarrito || !totalHTML) {
-    console.warn("carrito.js: No se encontró el contenedor del carrito en esta página.");
+    console.info("No se encontró el contenedor del carrito en esta página."); // Aviso en consola por si carrito.js se ejecuta fuera de carrito.html
     return;
   }
 
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
     actualizarTotal();
     agregarEventosEliminar();
     agregarEventosCantidad();
-    actualizarContadorCarrito();
+    actualizarContadorCarrito(); // Llamamos a las funciones que necesitamos actualizar cada vez que agregamos +1 producto al carrito
   }
 
   function actualizarTotal() {

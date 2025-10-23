@@ -1,6 +1,5 @@
 .main {
   background-color: $third-color;
-  grid-area: main;
   width: 100%;
   min-height: 80vh;
 }
@@ -52,6 +51,80 @@ h2 {
     }
   }
 }
+
+.tyc-estilos {
+  text-decoration: none;
+}
+
+.confirmacion {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(95, 11, 70, 0.7); 
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .confirmacion-contenido {
+    background-color: white;
+    color: $primary-color;
+    padding: 1.8rem 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 350px;
+    width: 90%;
+    animation: fadeIn 0.2s ease-in-out;
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .confirmacion-botones {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+
+      button {
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:first-child {
+          background-color: $secondary-color;
+          color: white;
+
+          &:hover {
+            background-color: darken($secondary-color, 8%);
+          }
+        }
+
+        &:last-child {
+          background-color: $third-color;
+          color: $primary-color;
+
+          &:hover {
+            background-color: lighten($third-color, 5%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
 .faq {
   padding: 20px;
   background-color: $third-color;

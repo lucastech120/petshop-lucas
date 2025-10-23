@@ -1,3 +1,6 @@
+// Funciones utiles
+
+// Esta función permite que siempre que agreguemos un producto, el "globo" rojo en el nav-bar actualiza su contador de productos
 export function actualizarContadorCarrito() {
   const contador = document.getElementById("contador-carrito");
   if (!contador) return;

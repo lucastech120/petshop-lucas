@@ -1,7 +1,9 @@
 
+// Traigo las funciones
 import { agregarAlCarrito } from './carrito.js';
 import { actualizarContadorCarrito } from './utils.js';
 
+// Busca el producto en el JSON para luego crear un contenedor por producto utilizando fetch
 const contenedor = document.getElementById("contenedor-cajas");
 
 if (contenedor) {
@@ -23,7 +25,6 @@ if (contenedor) {
         <p class="precio">$${prod.precio}</p>
         <button class="btn-agregar" data-id="${prod.id}">Agregar al carrito</button>
 `;
-
 
         contenedor.appendChild(div);
       });

@@ -1,5 +1,4 @@
 import { agregarAlCarrito } from "./carrito.js";
-import { mostrarNotificacion } from "./ui.js";
 import { actualizarContadorCarrito } from "./utils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -39,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
   //Función para renderizar el detalle
+
   function renderDetalle(prod) {
     const cont = document.getElementById("detalle-producto");
     cont.innerHTML = `
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    //   llamamos a agregar al carrito
+    //  Llamamos a agregar al carrito
 
     document.getElementById("agregar-detalle").addEventListener("click", () => {
       const cantidad = parseInt(document.getElementById("cantidad").value) || 1;
@@ -111,6 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
+    // Futuras categorias + Ramificación en tipos (Color, peso, otros)
+    // Detalles.js necesita detectar más imagenes principales por producto
+    // 
    
     cont.querySelectorAll(".caracter").forEach((btn) => {
       btn.addEventListener("click", () => {

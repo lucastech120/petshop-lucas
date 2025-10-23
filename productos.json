@@ -1,284 +1,287 @@
 [
-    {"id": "gatos-01",
+    {
+      "id": "gatos-01",
       "nombre": "Bebedero rosa gatos",
       "imagen": "../img/productos/bebedero-rosa.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "accesorios",
       "precio": 8399
     },
-    {"id": "gatos-02",
+    { 
+      "id": "gatos-02",
       "nombre": "Piedras higiénicas 10kg",
       "imagen": "../img/productos/pets-piedras.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "salud",
       "precio": 6700
     },
-    {"id": "gatos-03",
+    { 
+      "id": "gatos-03",
       "nombre": "Sabrositos gatos 20kg",
       "imagen": "../img/productos/sabrositos.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "alimentos",
       "precio": 13600
     },
-    {"id": "gatos-04",
+    { 
+      "id": "gatos-04",
       "nombre": "Arenero",
       "imagen": "../img/productos/arenero.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "accesorios",
       "precio": 5500
     },
-    {"id": "gatos-05",
+    { 
+      "id": "gatos-05",
       "nombre": "Bebedero alto gatos",
       "imagen": "../img/productos/bebedero-blanco.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "accesorios",
       "precio": 6800
     },
-    {"id": "gatos-06",
+    { 
+      "id": "gatos-06",
       "nombre": "Pipeta power gatos",
       "imagen": "../img/productos/power-gatos.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "salud",
       "precio": 5200
     },
-    {"id": "gatos-07",
+    { 
+      "id": "gatos-07",
       "nombre": "Dispenser comida",
       "imagen": "../img/productos/bebedero.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "accesorios",
       "precio": 8500
     },
-    {"id": "gatos-08",
+    { 
+      "id": "gatos-08",
       "nombre": "Palita higiénica",
       "imagen": "../img/productos/pala.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "accesorios",
       "precio": 900
     },
-    {"id": "gatos-09",
+    { 
+      "id": "gatos-09",
       "nombre": "Piedritas absorsol 10kg",
       "imagen": "../img/productos/absorsol-piedras.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "salud",
       "precio": 7400
     },
-    {"id": "gatos-10",
+    { 
+      "id": "gatos-10",
       "nombre": "Shampoo gatos",
       "imagen": "../img/productos/shampoo-gatos.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "salud",
       "precio": 2500
     },
-    {"id": "gatos-11",
+    { 
+      "id": "gatos-11",
       "nombre": "Whiskas gatos carne",
       "imagen": "../img/productos/whiskas-gato.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "alimentos",
       "precio": 900
     },
-    {"id": "gatos-12",
+    { 
+      "id": "gatos-12",
       "nombre": "Transportadora",
       "imagen": "../img/productos/gatera.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "accesorios",
       "precio": 27500
     },
-    {"id": "gatos-13",
+    { 
+      "id": "gatos-13",
       "nombre": "Premier gatos adultos 5kg",
       "imagen": "../img/productos/premier-cats.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "alimentos",
       "precio": 15999
     },
-    {"id": "gatos-14",
+    { 
+      "id": "gatos-14",
       "nombre": "Royal gatos dental 5kg",
       "imagen": "../img/productos/royal-gatos-v.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "alimentos",
       "precio": 18999
     },
-    {"id": "gatos-15",
+    { 
+      "id": "gatos-15",
       "nombre": "Royal gatos castrados 5kg",
       "imagen": "../img/productos/royal-castrados-c.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "alimentos",
       "precio": 18999
     },
-    {"id": "gatos-16",
+    { 
+      "id": "gatos-16",
       "nombre": "Cepillo de vapor para gatos",
       "imagen": "../img/productos/cepillo-vapor.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "accesorios",
       "precio": 11999
     },
-    {"id": "gatos-17",
+    { 
+      "id": "gatos-17",
       "nombre": "Rascador",
       "imagen": "../img/productos/rascador-rueda.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "camas",
       "precio": 14999
     },
-    {"id": "gatos-18",
+    { 
+      "id": "gatos-18",
       "nombre": "Arbol para gatos",
       "imagen": "../img/productos/arbol-gatos.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "camas",
       "precio": 27999
     },
-    {"id": "gatos-19",
+    { 
+      "id": "gatos-19",
       "nombre": "Royal gatos indoor 5kg",
       "imagen": "../img/productos/roya-indor-c.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "alimentos",
       "precio": 16999
     },
-    {"id": "gatos-20",
+    { 
+      "id": "gatos-20",
       "nombre": "Cama para gatos",
       "imagen": "../img/productos/cama-gatos.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "camas",
       "precio": 14999
     },
-    {"id": "gatos-21",
+    { 
+      "id": "gatos-21",
       "nombre": "Casita para gatos",
       "imagen": "../img/productos/casita-gatos.jpg",
-      "categoria": {
-          "nombre": "Gatos",
-          "id": "gatos"},
+      "categoria": "gatos",
+      "subcategoria": "camas",
       "precio": 19999
     },
 
 
-    {"id": "perros-01",
+
+
+
+    { 
+      "id": "perros-01",
       "nombre": "Snack pedigree sabor pollo",
       "imagen": "../img/productos/sobrecito-perro.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "alimentos",
       "precio": 1100
     },
-    {"id": "perros-02",
+    { 
+      "id": "perros-02",
       "nombre": "Bolsitas higiénicas",
       "imagen": "../img/productos/bolsitas.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros", 
+      "subcategoria": "accesorios",
       "precio": 1800
     },
-    {"id": "perros-03",
+    { 
+      "id": "perros-03",
       "nombre": "Pasta dental y cepillo",
       "imagen": "../img/productos/pasta-cepillo.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "salud",
       "precio": 2400
     },
-    {"id": "perros-04",
+    { 
+      "id": "perros-04",
       "nombre": "Pipeta power perros",
       "imagen": "../img/productos/power-perros.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "salud",
       "precio": 5200
     },
-    {"id": "perros-05",
+    { 
+      "id": "perros-05",
       "nombre": "Huesitos",
       "imagen": "../img/productos/huesitos.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "alimentos",
       "precio": 2000
     },
-    {"id": "perros-06",
+    { 
+      "id": "perros-06",
       "nombre": "Shampoo perros",
       "imagen": "../img/productos/dermosedan-perros.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "salud",
       "precio": 3000
     },
-    {"id": "perros-07",
+    { 
+      "id": "perros-07",
       "nombre": "Mordedor Stich",
       "imagen": "../img/productos/stich.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "accesorios",
       "precio": 5000
     },
-    {"id": "perros-08",
+    { 
+      "id": "perros-08",
       "nombre": "Royal perros renal 5kg",
       "imagen": "../img/productos/royal-renal.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "alimentos",
       "precio": 19999
     },
-    {"id": "perros-09",
+    { 
+      "id": "perros-09",
       "nombre": "Mordillo",
       "imagen": "../img/productos/mordillo.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "accesorios",
       "precio": 9799
     },
-    {"id": "perros-10",
+    { 
+      "id": "perros-10",
       "nombre": "Pechera + Correa",
       "imagen": "../img/productos/pechera-correa.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "accesorios",
       "precio": 10999
     },
-    {"id": "perros-11",
+    { 
+      "id": "perros-11",
       "nombre": "Casita para perro",
       "imagen": "../img/productos/casita-marron.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "camas",
       "precio": 19899
     },
-    {"id": "perros-12",
+    { 
+      "id": "perros-12",
       "nombre": "Huesitos de goma para perros",
       "imagen": "../img/productos/huesito-goma.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "accesorios",
       "precio": 8999
     },
-    {"id": "perros-13",
+    { 
+      "id": "perros-13",
       "nombre": "Huesitos sabor carne",
       "imagen": "../img/productos/huesitos-sabor.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "alimentos",
       "precio": 6999
     },
-    {"id": "perros-14",
+    { 
+      "id": "perros-14",
       "nombre": "Royal perros castrados 5kg",
       "imagen": "../img/productos/royal-castrados-p.jpg",
-      "categoria": {
-          "nombre": "Perros",
-          "id": "perros"},
+      "categoria": "perros",
+      "subcategoria": "alimentos",
       "precio": 18999
     }
 

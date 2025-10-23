@@ -5,14 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const idProducto = params.get("id");
 
-  //Validar que haya ID en la URL
+  //  Validar que haya ID
   if (!idProducto) {
     document.getElementById("detalle-producto").innerHTML =
       "<p>ID de producto no especificado</p>";
     return;
   }
 
-  //Fetch con manejo de errores mejorado
+  //  Fetch con manejo de errores mejorado
   fetch("../productos.json")
     .then((res) => {
       if (!res.ok) {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "<p>Hubo un error al cargar el producto.</p>";
     });
 
-  //Función para renderizar el detalle
+  // Función para renderizar el detalle
 
   function renderDetalle(prod) {
     const cont = document.getElementById("detalle-producto");
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Futuras categorias + Ramificación en tipos (Color, peso, otros)
+    // Futuras categorias y tipos (PARA EL CARRITO) (Color, peso, otros)
     // Detalles.js necesita detectar más imagenes principales por producto
     // 
    

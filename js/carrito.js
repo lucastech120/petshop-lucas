@@ -154,15 +154,78 @@ if (btnPagar) {
       mostrarNotificacion("Tu carrito está vacío 😕", "error");
       return;
     }
-
-    // Simulación de pago
-    carrito = [];
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-    mostrarCarrito();
-    mostrarNotificacion("¡Compra realizada con éxito! 🎉", "exito");
+    mostrarFormularioEnvio();
   });
 }
 
+function mostrarFormularioEnvio() {
+  let modal = document.getElementById("modal-envio");
+  
+  // Crear el formulario
+  if (!modal) {
+    modal = document.createElement("div");
+    modal.id = "modal-envio";
+    modal.innerHTML = `
+      <div id="contenido-modal">
+        <h2>Datos de envío</h2>
+        <label>Nombre y Apellido</label>
+        <input type="text" id="nombre" required>
 
+        <label>Teléfono</label>
+        <input type="tel" id="telefono" required>
+
+        <label>Dirección de envío</label>
+        <input type="text" id="direccion" required>
+
+        <div class="botones">
+          <button id="confirmar-envio">Confirmar</button>
+          <button id="cancelar-envio">Cancelar</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Eventos una sola vez
+    document.getElementById("cancelar-envio").addEventListener("click", () => {
+      modal.classList.remove("mostrar");
+    });
+
+    document.getElementById("confirmar-envio").addEventListener("click", confirmarEnvio);
+  }
+
+  // Pre-cargar datos si existen
+  document.getElementById("nombre").value = localStorage.getItem("nombre") || "";
+  document.getElementById("telefono").value = localStorage.getItem("telefono") || "";
+  document.getElementById("direccion").value = localStorage.getItem("direccion") || "";
+
+  modal.classList.add("mostrar");
+}
+
+function confirmarEnvio() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+  const direccion = document.getElementById("direccion").value.trim();
+
+  if (!nombre || !telefono || !direccion) {
+    mostrarNotificacion("Todos los campos son obligatorios", "error");
+    return;
+  }
+
+  // Guardamos los datos en localStorage
+  localStorage.setItem("nombre", nombre);
+  localStorage.setItem("telefono", telefono);
+  localStorage.setItem("direccion", direccion);
+
+  // Simulación de pago
+  carrito = [];
+  localStorage.setItem("carrito", JSON.stringify(carrito));
   mostrarCarrito();
+
+  mostrarNotificacion(`¡Gracias ${nombre}! Tu compra fue procesada 🎉`, "exito");
+
+  // Ocultar modal
+  document.getElementById("modal-envio").classList.remove("mostrar");
+}
+
 });

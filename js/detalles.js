@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
-  //  Fetch con manejo de errores mejorado
+  //  Busca el producto clickeado y lo genera
   fetch("../productos.json")
     .then((res) => {
       if (!res.ok) {

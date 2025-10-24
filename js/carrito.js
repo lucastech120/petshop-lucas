@@ -185,8 +185,7 @@ function mostrarFormularioEnvio() {
     `;
 
     document.body.appendChild(modal);
-
-    // Eventos una sola vez
+    
     document.getElementById("cancelar-envio").addEventListener("click", () => {
       modal.classList.remove("mostrar");
     });

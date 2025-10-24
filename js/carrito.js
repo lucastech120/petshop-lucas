@@ -145,6 +145,24 @@ document.addEventListener("DOMContentLoaded", () => {
     confirmacion.style.display = "none"; 
   });
 
+  // Botón para pagar
+const btnPagar = document.getElementById("pagar-carrito");
+
+if (btnPagar) {
+  btnPagar.addEventListener("click", () => {
+    if (carrito.length === 0) {
+      mostrarNotificacion("Tu carrito está vacío 😕", "error");
+      return;
+    }
+
+    // Simulación de pago
+    carrito = [];
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    mostrarCarrito();
+    mostrarNotificacion("¡Compra realizada con éxito! 🎉", "exito");
+  });
+}
+
 
   mostrarCarrito();
 });

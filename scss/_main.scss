@@ -1,5 +1,10 @@
+@use "./variables" as vars; 
+@use "./mixins"; 
+
+
+
 .main {
-  background-color: $third-color;
+  background-color: vars.$third-color;
   width: 100%;
   min-height: 80vh;
 }
@@ -70,7 +75,7 @@ h2 {
 
   .confirmacion-contenido {
     background-color: white;
-    color: $primary-color;
+    color: vars.$primary-color;
     padding: 1.8rem 2rem;
     border-radius: 10px;
     text-align: center;
@@ -98,20 +103,20 @@ h2 {
         transition: all 0.2s ease;
 
         &:first-child {
-          background-color: $secondary-color;
+          background-color: vars.$secondary-color;
           color: white;
 
           &:hover {
-            background-color: darken($secondary-color, 8%);
+            background-color: darken(vars.$secondary-color, 8%);
           }
         }
 
         &:last-child {
-          background-color: $third-color;
-          color: $primary-color;
+          background-color: vars.$third-color;
+          color: vars.$primary-color;
 
           &:hover {
-            background-color: lighten($third-color, 5%);
+            background-color: lighten(vars.$third-color, 5%);
           }
         }
       }
@@ -127,7 +132,7 @@ h2 {
 
 .faq {
   padding: 20px;
-  background-color: $third-color;
+  background-color: vars.$third-color;
   color: #000;
   text-align: center;
   h2 {
@@ -237,7 +242,7 @@ h3 {
   padding: 0 1rem;
   .category-item {
     background-color: #fff;
-    border-radius: $border-radius;
+    border-radius: vars.$border-radius;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-decoration: none;
@@ -251,7 +256,7 @@ h3 {
       transform: translateY(-5px);
     }
     &__img {
-      @include responsive-img;
+      @include mixins.responsive-img;
     }
     &__name {
       margin-top: 0.5rem;
@@ -282,7 +287,7 @@ h3 {
   text-align: center;
   padding: 20px;
   min-height: 80vh;
-  background-color: $third-color;
+  background-color: vars.$third-color;
 }
 .producto {
   flex: 1 1;
@@ -295,7 +300,7 @@ h3 {
   display: flex;
   flex-direction: column;
   img {
-    @include responsive-img;
+    @include mixins.responsive-img;
   }
 }
 
@@ -318,6 +323,7 @@ h3 {
   max-width: 800px;
   margin: 40px auto;
   padding: 20px;
+  height: 800px;
 }
 
 .producto-carrito {
@@ -341,21 +347,6 @@ h3 {
 
 .producto-carrito .info {
   flex-grow: 1;
-}
-
-.btn-eliminar,
-#vaciar-carrito {
-  background-color: #ff5555;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-.btn-eliminar:hover,
-#vaciar-carrito:hover {
-  background-color: #e33;
 }
 
 #contenedor-cajas {

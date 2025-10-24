@@ -1,3 +1,5 @@
+@use "./variables" as vars; 
+
 .detalle-container {
   max-width: 1200px;
   margin: 2rem auto;

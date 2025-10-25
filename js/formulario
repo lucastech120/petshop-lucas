@@ -1,0 +1,82 @@
+function mostrarFormularioEnvio() {
+  let modal = document.getElementById("modal-envio");
+
+  if (!modal) {modal = document.createElement("div");
+    modal.id = "modal-envio";
+    modal.innerHTML = `
+      <div id="contenido-modal">
+        <h2>Datos de envío</h2>
+        <label>Nombre y Apellido</label>
+        <input type="text" id="nombre" required>
+        <label>Teléfono</label>
+        <input type="tel" id="telefono" required>
+        <label>Dirección de envío</label>
+        <input type="text" id="direccion" required>
+        <div class="botones">
+          <button id="confirmar-envio">Confirmar</button>
+          <button id="cancelar-envio">Cancelar</button>
+        </div>
+      </div>
+    `;
+    modal = document.createElement("div");
+    modal.id = "modal-envio";
+    modal.innerHTML = `
+      <div id="contenido-modal">
+        <h2>Datos de envío</h2>
+        <label>Nombre y Apellido</label>
+        <input type="text" id="nombre" required>
+        <label>Teléfono</label>
+        <input type="tel" id="telefono" required>
+        <label>Dirección de envío</label>
+        <input type="text" id="direccion" required>
+        <div class="botones">
+          <button id="confirmar-envio">Confirmar</button>
+          <button id="cancelar-envio">Cancelar</button>
+        </div>
+      </div>
+    `;
+};
+document.body.appendChild(modal);
+
+    document.getElementById("cancelar-envio").addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    document.getElementById("confirmar-envio").addEventListener("click", confirmarEnvio);
+  }
+
+  // Pre-cargar datos
+  document.getElementById("nombre").value = localStorage.getItem("nombre") || "";
+  document.getElementById("telefono").value = localStorage.getItem("telefono") || "";
+  document.getElementById("direccion").value = localStorage.getItem("direccion") || "";
+
+  modal.style.display = "flex";
+
+
+function confirmarEnvio() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const telefono = document.getElementById("telefono").value.trim();
+  const direccion = document.getElementById("direccion").value.trim();
+
+  if (!nombre || !telefono || !direccion) {
+    mostrarNotificacion("Todos los campos son obligatorios", "error");
+    return;
+  }
+
+  localStorage.setItem("nombre", nombre);
+  localStorage.setItem("telefono", telefono);
+  localStorage.setItem("direccion", direccion);
+
+  // Vaciar carrito solo al confirmar
+  carrito = [];
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  mostrarCarrito();
+
+  mostrarNotificacion(`¡Gracias ${nombre}! Tu compra fue procesada 🎉`, "exito");
+
+  document.getElementById("modal-envio").style.display = "none";
+}
+
+futuro formulario, lo quise implementar para la entrega final pero me rompia el carrito y ya estoy sobre la hora
+voy a entregar hasta donde fue funcional
+si luego hay ree-entrega por algun error o falta, lo implementaré
